@@ -1,0 +1,9 @@
+i='asdfg'
+celebrate = set('Nativity Day')
+city = {'Delhi':3, 'Bengaluru':5, 'Chennai':4, 'Kolkata':6, 'Mumbai':7} 
+cityi=[2,4,[2,4,[45,3]]]
+j,*f,g='asdfg'
+scores =(12, 25, 32, 39,44)
+f_score, *bw_s, l_score = scores
+print("Output is :",f_score, "and", bw_s,"and",l_score)
+ 

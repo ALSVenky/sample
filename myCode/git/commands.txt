@@ -1,0 +1,136 @@
+git --version  --to know version
+git config --global user.name "w3schools-test"
+git config --global user.email "test@w3schools.com" 
+ 
+    Note: Use global to set the username and e-mail for every repository on your computer.
+  If you want to set the username/e-mail for just the current repo, you can remove global
+
+mkdir myproject  --making directory
+cd myproject     --changing directory
+
+    Note: If you already have a folder/directory you would like to use for Gitbash from there
+
+git init  --we just created a repository
+
+  Initialized empty Git repository in /Users/user/myproject/.git/
+    Note: Git now knows that it should watch the folder you initiated it on.
+        Git creates a hidden folder to keep track of changes.
+ now add files to that folder
+
+git status
+ On branch master
+ No commits yet
+ Untracked files:
+  (use "git add ..." to include in what will be committed)
+    index.html
+ nothing added to commit but untracked files present (use "git add" to track)
+      (Now Git is aware of the file, but has not added it to our repository!
+
+       Files in your Git repository folder can be in one of 2 states:
+
+       Tracked - files that Git knows about and are added to the repository
+       Untracked - files that are in your working directory, but not added to the repository
+       When you first add files to an empty repository, they are all untracked. To get Git to track them, you need to stage them, or add them to the staging environment.)
+
+git add index.html
+       The file should be Staged. Let's check the status::
+
+
+git status
+   On branch master
+
+    No commits yet
+
+    Changes to be committed:
+    (use "git rm --cached ..." to unstage)
+    new file: index.html
+  Now the file has been added to the Staging Environment.
+
+git add --all or git add . 
+    adds all files to staging area
+
+git commit -m "First release of Hello World!"  ---we commited our repo
+
+     Adding commits keep track of our progress and changes as we work. Git considers each commit change point or "save point". 
+     It is a point in the project you can go back to if you find a bug, or want to make a change.
+     
+     Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment. 
+     The -a option will automatically stage every changed, already tracked file.
+
+     lets change something inside index.html and  check the status of our repository. But this time, we will use the --short option to see the changes in a more compact way:
+
+git status --short
+  M index.html
+
+   (Note: Short status flags are:
+     ?? - Untracked files
+     A - Files added to stage
+     M - Modified files
+     D - Deleted files)
+  We see the file we expected is modified. So let's commit it directly:
+
+git commit -a -m "Updated index.html with a new line"
+
+   To view the history of commits for a repository, you can use the log command:
+git log
+
+git command -help    ---See all the available options for the specific command
+
+git commit -help
+----> Note: You can also use --help instead of -help to open the relevant Git manual page
+
+git help --all       ---See all possible commands
+--->If you find yourself stuck in the list view, SHIFT + G to jump the end of the list, then q to exit the view.
+
+git branch branchname   ---to create a branch    
+
+git branch    
+  branchname
+* master
+
+    We can see the new branch with the name "branchname", but the * beside master specifies that we are currently on that branch.
+    checkout is the command used to check out a branch. Moving us from the current branch, to the one specified at the end of the command:
+
+git checkout branchname
+    Switched to branch 'branchname'
+
+  Now we have moved our current workspace from the master branch, to the new branch
+
+  Note: Using the -b option on checkout will create a new branch, and move to it, if it does not exist
+git checkout -b branchname
+
+git merge branchname     --- to merge the curent branch with 'branchname'
+
+git branch -d branchname   --- to delete branch 
+
+git remote add origin URL 
+ --->specifies that you are adding a remote repository, with the specified URL, as an origin to your local Git repo.
+
+   Now we are going to push our master branch to the origin url, and set it as the default remote branch:
+
+git push --set-upstream origin master
+
+** git rm --cached -r   --->to remove everything inside the directory from staging area
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
