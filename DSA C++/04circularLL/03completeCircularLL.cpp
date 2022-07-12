@@ -103,7 +103,7 @@ int main(){
     int arr[]={5,2,3,4,1,6};
     create(arr,6);
     int len=length(head);
-    int pos=0,x=9;
+    int pos=0,x=2;
     insert(head,pos,x);
     cout<<length(head)<<endl;
     display(head);

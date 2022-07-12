@@ -58,7 +58,7 @@ int stackTop(){
     return value;
 }
 int isEmpty(){
-    return (top==NULL)?0:1;// (return !top?0:1;)
+    return (top!=NULL)?0:1;// (return top?0:1;)
 }
 int isFull(){
     node *t=new node;
@@ -70,7 +70,7 @@ int main(){
     push(3);
     display();
     cout<<pop()<<endl;
-    cout<<peek(2)<<endl;
+    cout<<peek(1)<<endl;
     cout<<isEmpty();
     return 0;
 }

@@ -1,8 +1,8 @@
 #include <iostream>
-#include<algorithm>
+// #include<algorithm>
 using namespace std;
-int binarySearch(int* arr,int k){
-    int f=0,l=sizeof(arr)/sizeof(arr[0]),m;
+int binarySearch(int arr[],int k,int n){
+    int f=0,l=n,m;
     while(f<=l){
         m=(f+l)/2;
         if(arr[m]==k){
@@ -19,10 +19,11 @@ int binarySearch(int* arr,int k){
 }
 int main(){
     int arr[]={1,4,6,8,9,21,34,56,75};
+    int size=sizeof(arr)/sizeof(arr[0]);
     cout<<"number to be searched: ";
-    int k;
+    int k=8;
     cin>>k;
-    int n=binarySearch(arr,k);
+    int n=binarySearch(arr,k,size);
     cout<<"the required value is at index "<< n;
 
     return 0;

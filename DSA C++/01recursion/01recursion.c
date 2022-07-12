@@ -5,7 +5,6 @@ void rec(int n){
         // cout<<n<<endl;
         rec(n-1);
     }
-
 }
 void rec2(int n2){
     if (n2>5){

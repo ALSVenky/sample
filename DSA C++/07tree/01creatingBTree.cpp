@@ -201,6 +201,32 @@ int deg2nodeCount(node *p){  // its working is based on postorder.
     }
     return 0;
 }
+int deg1nodeCount(node *p){  // its working is based on postorder.
+    int x,y;
+    if(p){
+        x=deg1nodeCount(p->lchild);
+        y=deg1nodeCount(p->rchild);
+        if((p->lchild==NULL &&  p->rchild )|| (p->lchild &&  p->rchild==NULL)){
+            return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
+int deg0nodeCount(node *p){  // its working is based on postorder.
+    int x,y;
+    if(p){
+        x=deg0nodeCount(p->lchild);
+        y=deg0nodeCount(p->rchild);
+        if(!p->lchild && !p->rchild){
+            return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
 int sumOfNodes(node *p){  // its working is based on postorder.
     int x,y;
     if(p){
@@ -229,6 +255,8 @@ int main(){
     //levelOrder(root);
     cout<<"no.of nodes = "<<nodeCount(root)<<endl;
     cout<<"no.of nodes having degree 2 = "<<deg2nodeCount(root)<<endl;
+    cout<<"no.of nodes having degree 1 = "<<deg1nodeCount(root)<<endl;
+    cout<<"no.of nodes having degree 0 = "<<deg0nodeCount(root)<<endl;
     cout<<"sum of nodes = "<<sumOfNodes(root)<<endl;
     cout<<"height of tree = "<<treeHeight(root)<<endl;
     return 0;
